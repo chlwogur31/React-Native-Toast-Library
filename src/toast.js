@@ -6,7 +6,6 @@ import {
   Text,
   TouchableWithoutFeedback,
   Platform,
-  Dimensions,
 } from "react-native";
 import { useDimensions } from "./utils/useDimensions";
 const Toast = (props) => {
@@ -26,7 +25,7 @@ const Toast = (props) => {
   const containerRef = useRef(null);
   const [animation] = useState(new Animated.Value(0));
   const closeTimeoutRef = useRef(null);
-  const dims = useDimensions(); // dimensions.get("window") 사용해도 무방함.
+  const dims = useDimensions();
   useEffect(() => {
     Animated.timing(animation, {
       toValue: 1,

@@ -5,12 +5,8 @@ import {
   Platform,
   Dimensions,
 } from "react-native";
-import Toast from "./toast";
+import Toast from "./Toast";
 const { width, height } = Dimensions.get("window");
-// const { zdex, setZdex } = useState(10);
-// const handleZindex = () => {
-//   setZdex(zdex++);
-// };
 class ToastContainer extends Component {
   constructor(props) {
     super(props);
@@ -103,7 +99,7 @@ class ToastContainer extends Component {
     const { toasts } = this.state;
     let { offset, offsetTop } = this.props;
     let style = {
-      top: offsetTop || offset,
+      top: height * -0.05,
       height: height,
       width: width,
       justifyContent: "center",
@@ -130,7 +126,6 @@ class ToastContainer extends Component {
       </KeyboardAvoidingView>
     );
   }
-  // renderTo
   render() {
     return (
       <>
@@ -151,8 +146,8 @@ const styles = StyleSheet.create({
     flex: 0,
     position: "absolute",
     maxWidth: "100%",
-    // zIndex: 999999,
-    // elevation: 999999,
+    zIndex: 999999,
+    elevation: 999999,
     alignSelf: "center",
     ...(Platform.OS === "web" ? { overflow: "hidden" } : null),
   },

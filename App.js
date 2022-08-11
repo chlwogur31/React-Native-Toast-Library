@@ -17,28 +17,27 @@ const Test = () => {
       duration: 4000,
       backgroundColor: "blue",
       messageColor: "black",
-      placement: "top",
+      placement: "center",
     });
-    console.log("toast1", toast);
   };
   const showToast2 = () => {
     toast.show("toast", {
       duration: 3000,
-      // backgroundColor: "orange",
+      backgroundColor: "orange",
       messageColor: "blue",
-      placement: "top",
     });
-    console.log("toast2", toast);
   };
   return (
     <View style={styles.container}>
-      <Text>Toast Library TEST</Text>
-      <TouchableOpacity onPress={showToast}>
-        <Text style={{ fontSize: 40 }}>click me</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={showToast2}>
-        <Text style={{ fontSize: 40 }}>click me 2</Text>
-      </TouchableOpacity>
+      <View style={{ flex: 0.6, alignItems: "center" }}>
+        <Text>Toast Library TEST</Text>
+        <TouchableOpacity onPress={showToast}>
+          <Text style={{ fontSize: 40 }}>click me</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={showToast2}>
+          <Text style={{ fontSize: 40 }}>click me 2</Text>
+        </TouchableOpacity>
+      </View>
       <StatusBar style="light" />
     </View>
   );
